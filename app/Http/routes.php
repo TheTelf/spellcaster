@@ -11,6 +11,12 @@
 |
 */
 
+Route::get('api/battles/{id}', 'BattleController@show');
+Route::get('api/battles', 'BattleController@index');
+Route::post('api/battles/{id}/action', 'BattleController@takeAction');
+
+//Route:resource('battle', 'BattleController', ['only' => ['index', 'create']]);
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
